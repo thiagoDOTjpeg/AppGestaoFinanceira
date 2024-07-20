@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão Financeira | Thiago Gritti</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- ! FONTS LINK SECTION ! -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--! -END- ! -->
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <h1>Gestão Financeira</h1>
+
+        <div id="navbar-tools">
+          <ul>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Adicionar Gastos</a></li>
+            <li><a href="#">Gerenciar Gastos</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="box-main-content">
+        <div class="box-monthly-balance">
+          <p class="title">Balanço Mensal</p>
+          <div style="width: 664px">
+            <canvas id="pie-chart"></canvas>
+            <script>
+              const pieChart = document.getElementById("pie-chart");
+
+              new Chart(pieChart, {
+                type: "pie",
+                data: {
+                  labels: [
+                    "Nubank",
+                    "Faculdade",
+                    "Computador",
+                    "Internet",
+                    "Guardar",
+                    "Internet Celular",
+                  ],
+                  datasets: [
+                    {
+                      label: "",
+                      data: [469.85, 243.67, 417.0, 129.9, 200.0, 39.9],
+                      backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+                        "rgb(200, 99, 100)",
+                        "rgb(20, 99, 255)",
+                        "rgb(40, 35, 200)",
+                      ],
+                      hoverOffset: 4,
+                    },
+                  ],
+                },
+              });
+            </script>
+          </div>
+          <div class="box-display-content"></div>
+        </div>
+        <div class="box-monthly-expenses"></div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

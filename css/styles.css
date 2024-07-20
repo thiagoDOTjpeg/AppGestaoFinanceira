@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Mono", sans-serif;
+  background-color: #858282;
+}
+
+/* ! NAVBAR SECTION */
+
+@property --colorOne {
+  syntax: "<color>";
+  initial-value: rgb(90, 90, 90);
+  inherits: false;
+}
+
+@property --colorTwo {
+  syntax: "<color>";
+  initial-value: #858282;
+  inherits: false;
+}
+
+header {
+  height: 100px;
+  background-image: linear-gradient(var(--colorOne), var(--colorTwo));
+  transition: --colorOne 0.8s;
+}
+
+header:hover {
+  --colorOne: rgb(51, 51, 51);
+  transition: --colorOne 0.8s;
+}
+
+header #navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  height: 100px;
+  max-width: 1368px;
+}
+
+header #navbar h1 {
+  font-size: 2.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.5rem;
+}
+
+header #navbar-tools ul {
+  display: flex;
+  gap: 2rem;
+  padding-right: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+header #navbar-tools a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header #navbar-tools a:hover {
+  color: #333;
+  transition: color 0.3s;
+}
+
+/* ! MAIN SECTION */
+
+main #box-main-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1368px;
+  margin: 0 auto;
+}
+
+main #box-main-content .box-monthly-balance {
+  background-color: rgb(109, 109, 109);
+
+  margin-top: 1rem;
+  height: 700px;
+  width: 664px;
+  max-width: 1368px;
+}
+
+main #box-main-content .box-monthly-expenses {
+  background-color: rgb(109, 109, 109);
+
+  margin: 0 auto;
+  margin-top: 1rem;
+  height: 700px;
+  width: 664px;
+  max-width: 1368px;
+}
+
+main #box-main-content .box-monthly-balance .title {
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-top: 1rem;
+  text-align: center;
+}
