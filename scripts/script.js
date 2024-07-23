@@ -1,10 +1,8 @@
-import { Chart } from "chart.js/dist";
+function createChart() {
+  const pieChart = document.getElementById("pie-chart");
+  const buttonCreate = document.getElementById("btnCreateGraph");
 
-const pieChart = document.getElementById("pie-chart");
-
-new Chart(pieChart, {
-  type: "pie",
-  data: {
+  const data = {
     labels: [
       "Nubank",
       "Faculdade",
@@ -13,20 +11,53 @@ new Chart(pieChart, {
       "Guardar",
       "Internet Celular",
     ],
+    color: "#0000000",
     datasets: [
       {
-        label: "",
+        label: "R$",
         data: [469.85, 243.67, 417.0, 129.9, 200.0, 39.9],
         backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
-          "rgb(200, 99, 100)",
+          "rgb(134,21,211)",
+          "rgb(255,223,30)",
+          "rgb(0, 0, 0)",
+          "rgb(146,149,199)",
           "rgb(20, 99, 255)",
-          "rgb(40, 35, 200)",
+          "rgb(32,215,111)",
         ],
-        hoverOffset: 4,
+        hoverOffset: 50,
       },
     ],
-  },
-});
+  };
+
+  const config = {
+    type: "pie",
+    data: data,
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "#000000",
+            weight: "bold",
+          },
+          title: {
+            padding: 300,
+          },
+          position: "right",
+          align: "end",
+        },
+      },
+      elements: {
+        arc: {
+          borderColor: "#AARRGGBB",
+          borderWidth: 0.5,
+        },
+      },
+      layout: {
+        padding: 25,
+      },
+    },
+  };
+
+  new Chart(pieChart, config);
+  buttonCreate.remove();
+}
