@@ -1,3 +1,22 @@
+import { createConnection } from "mysql";
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Ds85497156",
+  database: "dbTesteSQL",
+});
+
+connection.connect((erro) => {
+  if (erro) {
+    console.log("Erro: ", erro);
+  } else {
+    console.log("Deu certo!");
+  }
+});
+
+connection.end((erro) => {});
+
 function createChart() {
   const pieChart = document.getElementById("pie-chart");
   const buttonCreate = document.getElementById("btnCreateGraph");
